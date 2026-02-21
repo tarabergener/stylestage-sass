@@ -1,6 +1,10 @@
 // stylelint-disable no-descending-specificity
 body {
   background-color: var(--color-background);
+  // background-image: url(images/cats.png);
+  // background-repeat: repeat;
+  // background-size: 500px;
+  background-position: top left;
   color: var(--color-text);
   font-family: var(--font-family);
 }

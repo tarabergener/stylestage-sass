@@ -7,6 +7,25 @@ nav {
     padding: 0;
     list-style: none;
 
+    li:nth-child(1) a:hover::after {
+      background-image: url("images/cat-1.png");
+    }
+    li:nth-child(2) a:hover::after {
+      background-image: url("images/cat-2.png");
+    }
+    li:nth-child(3) a:hover::after {
+      background-image: url("images/cat-3.png");
+    }
+    li:nth-child(4) a:hover::after {
+      background-image: url("images/cat-4.png");
+    }
+    li:nth-child(5) a:hover::after {
+      background-image: url("images/cat-5.png");
+    }
+    li:nth-child(6) a:hover::after {
+      background-image: url("images/cat-6.png");
+    }
+
     a {
       display: inline-grid;
       padding: 0.5rem;
@@ -14,10 +33,35 @@ nav {
       font-size: 1.25rem;
       text-decoration: none;
 
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+
+        width: 90px;
+        height: 90px;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+
       &::before {
         width: 100%;
         height: 0.33em;
-        background-color: var(--color-secondary);
+        background-color: var(--color-hover);
         opacity: 0.15;
         content: "";
       }
