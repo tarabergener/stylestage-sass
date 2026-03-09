@@ -6,17 +6,21 @@ header {
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
+  background-color: var(--color-background);
+border-bottom: 4px solid var(--color-primary-alt);
   background-image:
-    url("images/header-box.png"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat, repeat-x, repeat-x;
+    url("images/header-cat-1.png"), url("images/header-cat-2.png"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23fe4f02' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ff9361' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat, repeat-x;
   background-size:
-    496px 487px,
+    75px 150px,
+    100px 200px,
     36px 72px,
     36px 72px;
   background-position:
-    156px -40px,
+    50% 88px,
+    right 28em,
     0 -38px,
     17px -40px;
   color: var(--color-primary);
@@ -24,11 +28,26 @@ header {
 
   h1 {
     @include logomark;
-    font-family: "Updock", sans-serif;
-    margin-top: 30px;
+    font-family: "Lucida Handwriting", "Papyrus", cursive;
+    margin-top: 85px;
   }
 
   h2 {
     max-width: 30ch;
+    font-family: "Garamond", "Times New Roman", serif;
+  }
+
+  @media (max-width: 700px) {
+    background-image: none, url("images/header-cat-2.png");
+    background-size: 75px 150px;
+    background-position: right 25em;
+  }
+  header::after {
+    content: "🐾";
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 2rem;
+    opacity: 0.6;
   }
 }

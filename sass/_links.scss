@@ -23,7 +23,9 @@
   min-height: 3em;
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: 0.18em 0.18em var(--color-secondary);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-radius: 20px;
+  font-family: "Lucida Handwriting", "Papyrus", cursive;
 }
 
 [class^="link"]:not(.link-codepen),
@@ -41,7 +43,7 @@
 
   &:hover,
   &:focus {
-    transform: translate(-0.15em, -0.15em);
+    transform: translate(-0.2em, -0.2em) scale(1.05);
     box-shadow: 0.3em 0.3em var(--color-secondary);
   }
 
