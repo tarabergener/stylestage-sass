@@ -6,9 +6,11 @@
   z-index: 1;
 
   h4 {
-    margin: 0;
-    color: var(--color-secondary);
+    margin: 0 0 0.75rem;
+    color: var(--color-primary-alt);
     text-align: center;
+    font-family: "Lucida Handwriting", "Papyrus", cursive;
+    font-size: 1.5rem;
   }
 
   .container {
@@ -17,9 +19,13 @@
     grid-gap: 1rem;
 
     > a {
-      min-height: 2em;
-      border: 2px solid currentColor;
-      color: var(--color-secondary);
+      min-height: 2.5em;
+      border: 2px solid var(--color-primary-alt);
+      color: var(--color-primary);
+      background-color: var(--color-background);
+      border-radius: 999px;
+      padding: 0 1.25rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     }
   }
 
@@ -30,6 +36,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    gap: 0.25rem 0.75rem;
 
     li {
       display: flex;
@@ -39,11 +46,13 @@
         width: auto;
         margin-right: 0.25em;
         font-weight: var(--font-weight-strong);
+        color: var(--color-primary);
       }
 
       span:nth-child(2) {
         flex-grow: 1;
         word-break: break-word;
+        color: var(--color-primary);
 
         a {
           color: inherit;
@@ -55,21 +64,38 @@
   @media (min-width: 180ch) {
     position: fixed;
     right: 2vmin;
-    bottom: 2vmin;
-    max-width: 30ch;
+    bottom: 16vmin;
+    max-width: 22ch;
     margin-bottom: 0;
-    border-radius: var(--border-radius);
-    background-color: var(--color-light);
-    box-shadow: 0 2px 5px rgba(color(primary), 0.15);
+    padding: 0.85rem;
+    border-radius: 20px;
+    background-color: rgba(255, 247, 242, 0.96);
+    border: 2px solid var(--color-primary-alt);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    font-size: 0.9rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23fe4f02'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='44' cy='20' r='6'/%3E%3Ccircle cx='32' cy='12' r='6'/%3E%3Cellipse cx='32' cy='38' rx='12' ry='10'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.9;
+    }
 
     ul {
       justify-content: unset;
+      gap: 0.35rem 0;
 
       li {
-        padding: 0;
+        padding: 0.15rem 0;
 
         span:nth-child(1) {
-          width: 8ch;
+          width: 7ch;
           margin-right: 0;
         }
       }
