@@ -628,9 +628,11 @@ nav ul li {
   z-index: 1;
 }
 .profile h4 {
-  margin: 0;
-  color: var(--color-secondary);
+  margin: 0 0 0.75rem;
+  color: var(--color-primary-alt);
   text-align: center;
+  font-family: "Lucida Handwriting", "Papyrus", cursive;
+  font-size: 1.5rem;
 }
 .profile .container {
   display: grid;
@@ -638,9 +640,13 @@ nav ul li {
   grid-gap: 1rem;
 }
 .profile .container > a {
-  min-height: 2em;
-  border: 2px solid currentColor;
-  color: var(--color-secondary);
+  min-height: 2.5em;
+  border: 2px solid var(--color-primary-alt);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  border-radius: 999px;
+  padding: 0 1.25rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 .profile ul {
   display: flex;
@@ -649,6 +655,7 @@ nav ul li {
   margin: 0;
   padding: 0;
   list-style: none;
+  gap: 0.25rem 0.75rem;
 }
 .profile ul li {
   display: flex;
@@ -658,10 +665,12 @@ nav ul li {
   width: auto;
   margin-right: 0.25em;
   font-weight: var(--font-weight-strong);
+  color: var(--color-primary);
 }
 .profile ul li span:nth-child(2) {
   flex-grow: 1;
   word-break: break-word;
+  color: var(--color-primary);
 }
 .profile ul li span:nth-child(2) a {
   color: inherit;
@@ -670,21 +679,37 @@ nav ul li {
   .profile {
     position: fixed;
     right: 2vmin;
-    bottom: 2vmin;
-    max-width: 30ch;
+    bottom: 16vmin;
+    max-width: 22ch;
     margin-bottom: 0;
-    border-radius: var(--border-radius);
-    background-color: var(--color-light);
-    box-shadow: 0 2px 5px rgba(14, 14, 14, 0.15);
+    padding: 0.85rem;
+    border-radius: 20px;
+    background-color: rgba(255, 247, 242, 0.96);
+    border: 2px solid var(--color-primary-alt);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    font-size: 0.9rem;
+  }
+  .profile::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23fe4f02'%3E%3Ccircle cx='20' cy='20' r='6'/%3E%3Ccircle cx='44' cy='20' r='6'/%3E%3Ccircle cx='32' cy='12' r='6'/%3E%3Cellipse cx='32' cy='38' rx='12' ry='10'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
   }
   .profile ul {
     justify-content: unset;
+    gap: 0.35rem 0;
   }
   .profile ul li {
-    padding: 0;
+    padding: 0.15rem 0;
   }
   .profile ul li span:nth-child(1) {
-    width: 8ch;
+    width: 7ch;
     margin-right: 0;
   }
 }
@@ -693,12 +718,24 @@ nav ul li {
   --logomark-height: 2em;
   --logomark-padding: 0;
   position: relative;
-  padding: 3rem 1rem;
-  background-color: var(--color-primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d2fbf7' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: center -34px;
+  margin-top: 5rem;
+  padding: 4.5rem 1.5rem 3rem;
+  overflow: hidden;
+  background-color: #121212;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 Q200 0 400 40 T800 40 T1200 40' stroke='%23fe4f02' stroke-width='4' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 30px;
+  background-size: 100% 60px;
+  border-top: 4px solid var(--color-primary-alt);
+  border-top-left-radius: 34px;
+  border-top-right-radius: 34px;
+  box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.22);
   color: var(--color-light);
+  text-align: center;
+  transition: background-position 0.4s ease;
+}
+.page-footer:hover {
+  background-position: left 40px;
 }
 .page-footer::before {
   display: inline-grid;
@@ -710,26 +747,86 @@ nav ul li {
   position: absolute;
   left: 50%;
   width: 2em;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -60%);
   background-color: var(--color-background);
   color: var(--color-primary);
   font-size: 3rem;
+  z-index: 2;
+  box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.45);
   content: "S";
 }
+.page-footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0 3px, transparent 3px 8px), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 0 3px, transparent 3px 8px), radial-gradient(circle at 35% 35%, #ff9361 0%, #fe4f02 70%, #c83a00 100%);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.2), 0 6px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
 .page-footer p:first-child {
-  margin-top: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
   font-weight: var(--font-weight-strong);
   letter-spacing: 0.03em;
   text-align: center;
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+}
+.page-footer p,
+.page-footer li,
+.page-footer a {
+  color: var(--color-light);
 }
 .page-footer p a {
-  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  font-weight: bold;
+}
+.page-footer p a:hover,
+.page-footer p a:focus {
+  color: var(--color-hover);
 }
 .page-footer ul {
   grid-template-columns: repeat(auto-fit, minmax(12ch, auto));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 .page-footer .container > :last-child {
   margin-bottom: 0;
+}
+
+.page-footer .container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.page-footer p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.page-footer ul {
+  margin: 2rem 0;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.page-footer ul::before {
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.page-footer:hover::after {
+  transform: rotate(5deg) scale(1.03);
 }
 
 .skip-link {
@@ -756,7 +853,7 @@ nav ul li {
   min-height: 3em;
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   font-family: "Lucida Handwriting", "Papyrus", cursive;
   position: relative;
