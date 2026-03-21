@@ -32,6 +32,21 @@
   z-index: 2;
   background: #fff;
 }
+#about section:nth-child(2) ul::before {
+  content: "";
+  position: absolute;
+  left: 23.25rem;
+  top: 18rem;
+  width: 15rem;
+  height: 15rem;
+  background-image: url("images/cat-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scaleX(-1);
+  border-radius: 50%;
+  z-index: 3;
+}
 #about section:nth-child(2) ul::after {
   content: "";
   position: absolute;
@@ -107,6 +122,10 @@ ul::before {
   opacity: 0.8;
   content: "";
   z-index: -1;
+}
+#about section:nth-child(2) p:nth-child(5),
+#about section:nth-child(2) p:nth-child(6) {
+  width: min(70%, 500px);
 }
 @media (max-width: 35rem) {
   #about section:nth-child(2)::before {
